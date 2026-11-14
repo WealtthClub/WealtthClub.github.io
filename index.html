@@ -308,6 +308,11 @@
   var primero = document.querySelector('.cta');
   function mirar() { fija.classList.toggle('ver', primero.getBoundingClientRect().bottom < 0); }
   addEventListener('scroll', mirar, { passive: true }); mirar();
+  // origen de la visita (?o=dm, ?o=boton, ?o=ad): pasa al SRC de Hotmart para saber qué canal vende
+  var o = (new URLSearchParams(location.search).get('o') || '').replace(/[^a-z0-9]/gi, '').slice(0, 12);
+  if (o) document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(function (a) {
+    a.href = a.href.replace('src=landing_', 'src=' + o + '_');
+  });
 </script>
 </body>
 </html>
