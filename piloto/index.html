@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página en Piloto Automático · Wealth Club</title>
+<meta name="description" content="30 días de contenido listo para una página de dinero y mentalidad, sin mostrar la cara. 30 videos, 30 imágenes, descripciones, calendario y guía.">
+<meta name="theme-color" content="#0b0b0c">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wealtthclub.github.io/piloto/">
+<meta property="og:title" content="Página en Piloto Automático">
+<meta property="og:description" content="30 días de contenido listo para tu página, sin mostrar la cara.">
+<meta property="og:image" content="https://wealtthclub.github.io/piloto/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" type="image/png" href="icono.png">
+<link rel="apple-touch-icon" href="icono.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Unbounded:wght@700;900&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0b0c;
+    --panel: #141416;
+    --line: #2a2a2e;
+    --text: #f2f0ea;
+    --muted: #a7a39a;
+    --gold: #ecc66b;
+    --gold-2: #c99a3a;
+    --green: #3ecf8e;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font: 400 16px/1.55 Montserrat, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  img, video { display: block; max-width: 100%; }
+  .wrap { max-width: 520px; margin: 0 auto; padding: 0 18px; }
+  section { padding: 44px 0; border-top: 1px solid var(--line); }
+  h1, h2 { font-family: Unbounded, sans-serif; font-weight: 900; letter-spacing: -.01em; line-height: 1.12; text-transform: uppercase; }
+  h1 { font-size: clamp(28px, 8.4vw, 40px); }
+  h2 { font-size: clamp(22px, 6.4vw, 30px); margin-bottom: 18px; }
+  .oro { font-family: "Playfair Display", serif; font-style: italic; font-weight: 600; text-transform: none; color: var(--gold); letter-spacing: 0; }
+  .eyebrow { font: 700 12px/1 Montserrat; letter-spacing: .22em; color: var(--gold); text-transform: uppercase; margin-bottom: 14px; }
+  .sub { color: var(--muted); font-size: 17px; margin-top: 14px; }
+  .sub b { color: var(--text); }
+
+  /* barra superior */
+  .top { background: linear-gradient(90deg, #1b160b, #2a2110, #1b160b); color: var(--gold); text-align: center; font: 700 12px/1 Montserrat; letter-spacing: .12em; padding: 10px 12px; text-transform: uppercase; }
+
+  /* hero */
+  .hero { padding: 30px 0 36px; border-top: 0; }
+  .marca { font: 800 11px/1 Unbounded; letter-spacing: .3em; color: var(--muted); margin-bottom: 22px; }
+  .antes-despues { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 26px 0 10px; position: relative; }
+  .antes-despues figure { position: relative; border-radius: 14px; overflow: hidden; aspect-ratio: 4/5; background: var(--panel); }
+  .antes-despues img { width: 100%; height: 100%; object-fit: cover; }
+  .antes-despues figcaption { position: absolute; left: 10px; bottom: 10px; font: 800 11px/1 Montserrat; letter-spacing: .14em; text-transform: uppercase; background: rgba(11,11,12,.8); padding: 7px 9px; border-radius: 6px; }
+  .antes-despues figure:last-child figcaption { color: var(--bg); background: var(--gold); }
+  .flecha { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 42px; height: 42px; border-radius: 50%; background: var(--gold); color: var(--bg); display: grid; place-items: center; font: 900 20px/1 Unbounded; box-shadow: 0 0 0 5px var(--bg); }
+  .nota { color: var(--muted); font-size: 13px; text-align: center; }
+
+  .cta { display: block; text-align: center; text-decoration: none; background: linear-gradient(180deg, #f5d27e, var(--gold) 45%, var(--gold-2)); color: #111; font: 800 17px/1.2 Montserrat; text-transform: uppercase; letter-spacing: .03em; padding: 19px 18px; border-radius: 14px; margin-top: 24px; box-shadow: 0 10px 30px rgba(236,198,107,.25); }
+  .cta small { display: block; font-weight: 600; font-size: 12.5px; text-transform: none; letter-spacing: 0; margin-top: 5px; opacity: .8; }
+  .sellos { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px 16px; margin-top: 14px; color: var(--muted); font-size: 13px; }
+  .sellos span::before { content: "✓ "; color: var(--green); font-weight: 800; }
+
+  /* formatos */
+  .formatos { display: grid; gap: 16px; }
+  .formato { display: grid; grid-template-columns: 132px 1fr; gap: 14px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 12px; }
+  .formato .media { border-radius: 10px; overflow: hidden; aspect-ratio: 9/16; background: #000; }
+  .formato video, .formato .media img { width: 100%; height: 100%; object-fit: cover; }
+  .formato h3 { font: 800 16px/1.25 Montserrat; margin-bottom: 6px; }
+  .formato p { color: var(--muted); font-size: 14px; line-height: 1.45; }
+  .num { display: inline-block; margin-top: 10px; font: 900 22px/1 Unbounded; color: var(--gold); }
+  .num small { display: block; font: 600 11px/1.3 Montserrat; color: var(--muted); margin-top: 5px; letter-spacing: .02em; }
+  .aclara { color: var(--muted); font-size: 12.5px; margin-top: 14px; text-align: center; }
+
+  .propia { display: flex; align-items: center; gap: 14px; margin-top: 18px; padding: 14px 16px; border-radius: 14px; border: 1px solid #4a3c1c; background: #17140c; }
+  .propia b { font: 900 24px/1 Unbounded; color: var(--gold); white-space: nowrap; }
+  .propia span { font-size: 13.5px; color: var(--muted); line-height: 1.4; }
+
+  .pasos { list-style: none; counter-reset: p; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 22px; }
+  .pasos li { counter-increment: p; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 10px; text-align: center; font-size: 12.5px; color: var(--muted); line-height: 1.35; }
+  .pasos li::before { content: counter(p); display: grid; place-items: center; width: 26px; height: 26px; margin: 0 auto 8px; border-radius: 50%; background: var(--gold); color: #111; font: 900 12px/1 Unbounded; }
+  .pasos b { display: block; color: var(--text); font-size: 13px; margin-bottom: 3px; }
+
+  /* lista */
+  .lista { list-style: none; display: grid; gap: 12px; }
+  .lista li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; font-size: 15.5px; }
+  .lista li::before { content: attr(data-i); width: 28px; height: 28px; border-radius: 8px; background: #221d10; color: var(--gold); display: grid; place-items: center; font: 800 12px/1 Unbounded; }
+  .lista b { color: var(--text); }
+  .lista span { color: var(--muted); }
+
+  /* por dentro */
+  .portada { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); margin-bottom: 12px; }
+  .paginas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .paginas img { border-radius: 8px; border: 1px solid var(--line); aspect-ratio: 3/4; object-fit: cover; width: 100%; }
+
+  /* bonus */
+  .bonus { background: radial-gradient(120% 100% at 0% 0%, #2a2110, var(--panel) 60%); border: 1px solid #4a3c1c; border-radius: 18px; padding: 22px 20px; }
+  .bonus .tag { display: inline-block; background: var(--gold); color: #111; font: 800 11px/1 Montserrat; letter-spacing: .14em; padding: 7px 10px; border-radius: 6px; margin-bottom: 12px; }
+  .bonus h3 { font: 900 20px/1.2 Unbounded; text-transform: uppercase; margin-bottom: 10px; }
+  .bonus ul { list-style: none; display: grid; gap: 7px; color: var(--muted); font-size: 15px; }
+  .bonus li::before { content: "👉 "; }
+
+  /* para quién */
+  .chips { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .chip { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; font-size: 14px; color: var(--muted); }
+  .chip b { display: block; color: var(--text); font-size: 15px; margin-bottom: 4px; }
+
+  /* precio */
+  .precio { text-align: center; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 28px 20px; }
+  .precio .valor { font: 900 46px/1 Unbounded; color: var(--gold); margin: 10px 0 4px; }
+  .precio .valor small { font-size: 18px; }
+  .precio .ars { color: var(--muted); font-size: 14px; }
+  .incluye { list-style: none; text-align: left; display: grid; gap: 8px; margin: 22px 0 0; font-size: 15px; }
+  .incluye li::before { content: "✅ "; }
+
+  .garantia { display: grid; grid-template-columns: 74px 1fr; gap: 14px; align-items: center; margin-top: 18px; }
+  .sello { width: 74px; height: 74px; border-radius: 50%; border: 2px solid var(--gold); display: grid; place-items: center; text-align: center; font: 900 20px/1 Unbounded; color: var(--gold); }
+  .sello small { display: block; font: 700 7.5px/1.15 Montserrat; letter-spacing: .06em; margin-top: 3px; }
+  .garantia p { color: var(--muted); font-size: 14px; }
+  .garantia b { color: var(--text); }
+
+  /* faq */
+  details { border-bottom: 1px solid var(--line); padding: 16px 0; }
+  summary { cursor: pointer; font-weight: 700; font-size: 15.5px; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::after { content: "+"; color: var(--gold); font: 900 18px/1 Unbounded; }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--muted); font-size: 14.5px; margin-top: 10px; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 110px; color: #6d6a63; font-size: 12px; text-align: center; }
+
+  /* barra fija abajo */
+  .fija { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; background: rgba(11,11,12,.92); backdrop-filter: blur(8px); border-top: 1px solid var(--line); padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); transform: translateY(110%); transition: transform .3s; }
+  .fija.ver { transform: none; }
+  .fija .wrap { display: flex; align-items: center; gap: 12px; padding: 0; }
+  .fija .p { font: 900 18px/1 Unbounded; color: var(--gold); white-space: nowrap; }
+  .fija .p small { display: block; font: 600 11px/1.2 Montserrat; color: var(--muted); margin-top: 3px; }
+  .fija a { flex: 1; text-align: center; text-decoration: none; background: var(--gold); color: #111; font: 800 15px/1 Montserrat; text-transform: uppercase; padding: 15px 10px; border-radius: 12px; }
+</style>
+</head>
+<body>
+<style>
+  .stats { border-radius: 16px; overflow: hidden; border: 1px solid var(--line); margin-top: 24px; }
+  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+  .kpi b { display: block; font: 900 24px/1 Unbounded; color: var(--gold); }
+  .kpi span { display: block; font-size: 12.5px; color: var(--muted); margin-top: 6px; line-height: 1.35; }
+  .vids { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .vids video { width: 100%; aspect-ratio: 9/16; object-fit: cover; border-radius: 10px; background: #000; border: 1px solid var(--line); }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 8px; }
+  .grid4 img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); }
+  .no { margin-top: 14px; font-size: 14px; color: var(--muted); }
+  .no b { color: var(--text); }
+</style>
+
+<div class="top">Pack de contenido · pago único · garantía de 7 días</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="marca">WEALTH CLUB</div>
+    <h1>Esta página tiene un mes y hizo <span class="oro">150.000</span> vistas sin mostrar la cara</h1>
+    <p class="sub">Te damos <b>30 días de contenido listo</b> para la tuya y el <b>sistema exacto</b> que usamos. Lo programás en una hora y te olvidás.</p>
+    <div class="stats"><img src="estadisticas.jpg" alt="Estadísticas reales de la página Wealth Club en Meta Business Suite: 150,2 mil visualizaciones y 2,6 mil seguidores en 28 días" width="730" height="447"></div>
+    <p class="nota" style="margin-top:8px">Captura real de Meta Business Suite, últimos 28 días.</p>
+    <a class="cta" href="#precio">Quiero el pack<small>30 videos + 30 imágenes + textos + calendario · USD 9,90</small></a>
+    <div class="sellos"><span>Sin mostrar la cara</span><span>Sin editar</span><span>Listo para subir</span></div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Los números, sin humo</div>
+    <h2>Lo que hizo nuestra página en <span class="oro">28 días</span></h2>
+    <div class="kpis">
+      <div class="kpi"><b>150,2 mil</b><span>visualizaciones. El 96 % de gente que no nos seguía.</span></div>
+      <div class="kpi"><b>+2.582</b><span>seguidores nuevos netos.</span></div>
+      <div class="kpi"><b>50.080</b><span>vistas en un solo video de voz en off sobre deudas.</span></div>
+      <div class="kpi"><b>15,3 mil</b><span>me gusta, comentarios, compartidos y guardados.</span></div>
+    </div>
+    <p class="no"><b>Seamos claros:</b> la mayoría de los videos hacen entre 500 y 10.000 vistas, y uno o dos explotan. Nadie puede garantizarte vistas. Lo que funciona es publicar todos los días, y eso es justo lo que te resolvemos.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Lo que vas a publicar</div>
+    <h2>30 videos de <span class="oro">Mentalidad Millonaria</span></h2>
+    <p class="sub" style="margin:-6px 0 16px">Voz en off en español, tomas oscuras de lujo y palabras clave en dorado. El formato que más vistas nos dio.</p>
+    <div class="vids">
+      <video src="v1.mp4" poster="v1.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <video src="v2.mp4" poster="v2.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      <video src="v3.mp4" poster="v3.jpg" autoplay muted loop playsinline preload="metadata"></video>
+    </div>
+    <h2 style="margin-top:30px">+ 30 imágenes de <span class="oro">frases</span></h2>
+    <div class="grid4">
+      <img src="img03.jpg" alt="Imagen del pack: Págate primero" loading="lazy">
+      <img src="img08.jpg" alt="Imagen del pack: Tu vida se define en las horas que nadie ve" loading="lazy">
+      <img src="img12.jpg" alt="Imagen del pack: El dinero se recupera, la confianza casi nunca" loading="lazy">
+      <img src="img15.jpg" alt="Imagen del pack: El dinero vuelve, el tiempo no" loading="lazy">
+      <img src="img18.jpg" alt="Imagen del pack: El dinero de verdad compra tranquilidad" loading="lazy">
+      <img src="img23.jpg" alt="Imagen del pack: Deja de consumir, empieza a crear" loading="lazy">
+      <img src="img27.jpg" alt="Imagen del pack: 1 % mejor cada día" loading="lazy">
+      <img src="img30.jpg" alt="Imagen del pack: No fue suerte, fue preparación" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Qué incluye</div>
+    <h2>Un mes entero, <span class="oro">resuelto</span></h2>
+    <ul class="lista">
+      <li data-i="30"><div><b>Videos listos para subir.</b> <span>Verticales 1080×1920, livianos para subir desde el celular. Temas exclusivos: no los publicamos en nuestra página.</span></div></li>
+      <li data-i="30"><div><b>Imágenes de frases.</b> <span>Formato 4:5 para el feed, una por día.</span></div></li>
+      <li data-i="60"><div><b>Descripciones con hashtags.</b> <span>Para copiar y pegar.</span></div></li>
+      <li data-i="1"><div><b>Calendario de 30 días.</b> <span>Qué publicar y a qué hora.</span></div></li>
+      <li data-i="1"><div><b>La guía del sistema.</b> <span>Cómo armar la página, programar el mes en una hora, medir y convertir vistas en ingresos.</span></div></li>
+    </ul>
+    <div class="bonus" style="margin-top:22px">
+      <span class="tag">BONUS</span>
+      <h3>Fábrica de Virales con IA</h3>
+      <ul><li>Nuestra guía de 18 páginas para crear tus propios videos con IA cuando se termine el mes.</li></ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Así de simple</div>
+    <h2>Tu página en <span class="oro">piloto automático</span></h2>
+    <ol class="pasos">
+      <li><b>Descargás</b><span>Te llega al email al instante.</span></li>
+      <li><b>Programás</b><span>El mes entero en una hora.</span></li>
+      <li><b>Publicás</b><span>Todos los días, sin pensar qué subir.</span></li>
+    </ol>
+    <p class="no"><b>¿Por qué los videos no tienen música?</b> A propósito: le ponés el audio en tendencia desde la app, que es lo que más alcance da, y así tus videos no quedan iguales a los de nadie.</p>
+  </div>
+</section>
+
+<section id="precio">
+  <div class="wrap">
+    <div class="precio">
+      <div class="eyebrow" style="margin:0">Página en Piloto Automático</div>
+      <div class="valor">USD 9,90</div>
+      <div class="ars">Pago único · se cobra en tu moneda</div>
+      <ul class="incluye">
+        <li>30 videos listos para subir</li>
+        <li>30 imágenes de frases</li>
+        <li>60 descripciones + calendario de 30 días</li>
+        <li>Guía del sistema + bonus Fábrica de Virales</li>
+        <li>Tarjeta, Mercado Pago o PayPal</li>
+      </ul>
+      <a class="cta" href="https://pay.hotmart.com/U108490371L?src=pack_precio">Quiero el pack ahora<small>Compra segura procesada por Hotmart</small></a>
+    </div>
+    <div class="garantia">
+      <div class="sello">7<small>DÍAS DE<br>GARANTÍA</small></div>
+      <p><b>Si no te sirve, te devolvemos el 100 %.</b> Tenés 7 días para pedir el reembolso desde Hotmart, sin preguntas.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Preguntas frecuentes</div>
+    <details><summary>¿Me garantiza que voy a ganar plata?</summary><p>No. Nadie puede prometerte vistas ni ingresos. Te damos el contenido y el sistema que a nosotros nos funcionó; la constancia la ponés vos. En la guía te explicamos las tres formas reales de convertir vistas en dinero.</p></details>
+    <details><summary>¿Lo puedo usar en Instagram y TikTok?</summary><p>Sí. Los videos son verticales y sirven para Reels, TikTok y Shorts. Podés publicarlos en todas tus cuentas.</p></details>
+    <details><summary>¿Otras personas van a subir lo mismo?</summary><p>Puede pasar, por eso los videos van sin música y te explicamos cómo ponerles tu audio y tu marca. Así quedan distintos y Facebook los toma como tuyos.</p></details>
+    <details><summary>¿Necesito saber editar?</summary><p>No. Están listos para subir. Solo tenés que programarlos, y te mostramos cómo paso a paso.</p></details>
+    <details><summary>¿Cómo lo recibo?</summary><p>Apenas se aprueba el pago te llega un email de Hotmart con el acceso para descargar todo.</p></details>
+    <a class="cta" href="https://pay.hotmart.com/U108490371L?src=pack_faq">Quiero el pack · USD 9,90</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Wealth Club · Página en Piloto Automático<br>Tomas y fotos de Pexels. Pago procesado por Hotmart. Este sitio no forma parte de Facebook ni de Meta.</div>
+</footer>
+
+<div class="fija" id="fija">
+  <div class="wrap">
+    <div class="p">USD 9,90<small>30 días de contenido</small></div>
+    <a href="#precio">Comprar</a>
+  </div>
+</div>
+
+<script>
+  var fija = document.getElementById('fija');
+  var primero = document.querySelector('.cta');
+  function mirar() { fija.classList.toggle('ver', primero.getBoundingClientRect().bottom < 0); }
+  addEventListener('scroll', mirar, { passive: true }); mirar();
+  // origen de la visita (?o=dm, ?o=boton, ?o=guia): pasa al SRC de Hotmart
+  var o = (new URLSearchParams(location.search).get('o') || '').replace(/[^a-z0-9]/gi, '').slice(0, 12);
+  if (o) document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(function (a) {
+    a.href = a.href.replace('src=pack_', 'src=' + o + 'pack_');
+  });
+</script>
+</body>
+</html>
